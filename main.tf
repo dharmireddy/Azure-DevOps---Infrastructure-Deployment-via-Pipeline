@@ -102,7 +102,7 @@ resource "azurerm_subnet" "azsubnet" {
   name                 = "subnetfortfcourse"
   resource_group_name  = azurerm_resource_group.resourcegroup.name
   virtual_network_name = azurerm_virtual_network.azvnet.name
-  address_prefix       = element(var.address_space, 3)
+  address_prefix       = [element(var.address_space, 3)]
 }
 resource "azurerm_public_ip" "publicip" {
   count               = 3
